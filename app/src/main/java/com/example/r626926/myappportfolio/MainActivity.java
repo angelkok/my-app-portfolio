@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -40,31 +41,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void launchApp(View view) {
-        Context context = getApplicationContext();
-        CharSequence text = "";
-        int duration = Toast.LENGTH_SHORT;
-
-        switch(view.getId()) {
-            case(R.id.button1):
-                text = "Launching app: Spotify Streamer";
-                break;
-            case(R.id.button2):
-                text = "Launching app: Scores App";
-                break;
-            case(R.id.button3):
-                text = "Launching app: Library App";
-                break;
-            case(R.id.button4):
-                text = "Launching app: Build It Bigger";
-                break;
-            case(R.id.button5):
-                text = "Launching app: XYZ Reader";
-                break;
-            case(R.id.button6):
-                text = "This button will launch my capstone app";
-                break;
-        }
-        
-        Toast.makeText(context, text, duration).show();
+        Button btn = (Button)view;
+        Toast.makeText(getApplicationContext(), (CharSequence) btn.getText(), Toast.LENGTH_SHORT).show();
     }
 }
